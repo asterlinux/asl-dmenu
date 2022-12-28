@@ -1,11 +1,11 @@
 # Maintainer: Derek Taylor <derek@distrotube.com>
-pkgname=dmenu-distrotube-git
+pkgname=asl-dmenu
 pkgver=5.0.r22.8695f74
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="A build of dmenu patched for centering, borders, grids, numbers, line height, mouse support, fuzzy matching and highlighting."
 arch=(x86_64)
-url="https://www.gitlab.com/dwt1/dmenu-distrotube.git"
+url="https://github.com/asterlinux/asl-dmenu.git"
 license=('MIT')
 groups=()
 depends=(ttf-hack ttf-joypixels)
@@ -24,18 +24,13 @@ noextract=()
 md5sums=('SKIP')
 validpgpkeys=()
 
-pkgver() {
-	cd "${_pkgname}"
-    printf "5.0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
-
 build() {
-	cd dmenu-distrotube
-    make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+	cd asl-dmenu
+	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
 package() {
-    cd dmenu-distrotube  
+    cd asl-dmenu  
     mkdir -p ${pkgdir}/opt/${pkgname}
     cp -rf * ${pkgdir}/opt/${pkgname}
     make PREFIX=/usr DESTDIR="${pkgdir}" install
