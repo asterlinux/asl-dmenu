@@ -1,2 +1,2 @@
-###This is DistroTubes Dmenu pkg theme for Aster Linux
+### This is DistroTubes Dmenu pkg theme for Aster Linux
 
