@@ -1,7 +1,7 @@
 # Maintainer: Derek Taylor <derek@distrotube.com>
 pkgname=asl-dmenu
-pkgver=5.0.r22.8695f74
-pkgrel=2
+pkgver=1
+pkgrel=3
 epoch=
 pkgdesc="A build of dmenu patched for centering, borders, grids, numbers, line height, mouse support, fuzzy matching and highlighting."
 arch=(x86_64)
